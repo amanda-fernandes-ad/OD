@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Plano de filmagem</title>
+
+<script>
+  // =====================================================
+  //  TROQUE SÓ ESTA LINHA A CADA JOB
+  //  (cole o link do plano entre as aspas)
+  //  Entre um job e outro, deixe vazio: ""
+  // =====================================================
+  const PLANO = "https://less-paper.app/to/440910f8-41de-460b-bf38-f807c5c7e637";
+
+  if (PLANO) { window.location.replace(PLANO); }
+</script>
+
+<style>
+  :root { --bg:#111; --fg:#f2f2f2; --muted:#9a9a9a; --accent:#f5c518; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:var(--bg); color:var(--fg);
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    text-align:center; padding:24px;
+  }
+  h1 { font-size:1.4rem; font-weight:600; margin:0 0 8px; }
+  p { color:var(--muted); margin:0 0 28px; font-size:.95rem; }
+  a.btn {
+    display:inline-block; padding:16px 28px; border-radius:12px;
+    background:var(--accent); color:#111; font-weight:700; text-decoration:none; font-size:1rem;
+  }
+  .hidden { display:none; }
+</style>
+</head>
+<body>
+  <main>
+    <div id="com-plano">
+      <h1>Abrindo o plano de filmagem…</h1>
+      <p>Se não abrir sozinho, toque no botão.</p>
+      <a class="btn" id="botao" href="#">Abrir plano de filmagem</a>
+    </div>
+    <div id="sem-plano" class="hidden">
+      <h1>Nenhuma diária no momento</h1>
+      <p>Volte a escanear quando o próximo job começar.</p>
+    </div>
+  </main>
+  <script>
+    if (PLANO) {
+      document.getElementById("botao").href = PLANO;
+    } else {
+      document.getElementById("com-plano").classList.add("hidden");
+      document.getElementById("sem-plano").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
